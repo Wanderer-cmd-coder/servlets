@@ -11,6 +11,7 @@ import java.io.Reader;
 public class PostController {
   public static final String APPLICATION_JSON = "application/json";
   private final PostService service;
+  private final Gson gson = new Gson();
 
   public PostController(PostService service) {
     this.service = service;
@@ -19,7 +20,6 @@ public class PostController {
   public void all(HttpServletResponse response) throws IOException {
     response.setContentType(APPLICATION_JSON);
     final var data = service.all();
-    final var gson = new Gson();
     response.getWriter().print(gson.toJson(data));
   }
 

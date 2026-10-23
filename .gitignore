@@ -1,0 +1,7 @@
+target/
+.idea/
+.smarttomcat/
+*.iml
+test.http
+*.war
+*.jar
